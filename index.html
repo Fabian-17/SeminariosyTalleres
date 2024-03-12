@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento</title>
+    <style>
+        #mensaje {
+            display: none;
+            color: red;
+            background-color: yellow;
+        }
+        #idTexto {
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola</h1>
+    <button onclick="ejecutar()">hola</button>
+    <input id="inputTexto" placeholder="Escribe algo aquí" onmouseover="ocultarMensajes()" onmouseout="mostrarMensajes()">
+    <br>
+    <br>
+    <label id="idTexto">el texto</label>
+    <div id="mensaje">Cargue algo por favor</div>
+    <script>
+        function ejecutar() {
+            let inputValor = document.getElementById("inputTexto").value.trim(); 
+
+            if (inputValor === "") {
+                document.getElementById("mensaje").style.display = "block";
+            } else {
+                alert("Se cargó: " + inputValor);
+                console.log("Se cargó: " + inputValor);
+                document.getElementById("mensaje").style.display = "none";
+                document.getElementById("idTexto").style.display = "inline"; 
+            }
+        }
+
+        function ocultarMensajes() {
+            document.getElementById("mensaje").style.display = "none";
+            document.getElementById("idTexto").style.display = "none";
+        }
+
+        function mostrarMensajes() {
+            let inputValor = document.getElementById("inputTexto").value.trim(); 
+
+            if (inputValor !== onclick) {
+                document.getElementById("mensaje").style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
